@@ -5,6 +5,7 @@ import Header from "./_components/header";
 import ProductList from "./_components/products/products-list";
 import Search from "./_components/search";
 import { Button } from "./_components/ui/button";
+import RestaurantsList from "./_components/restaurants/restaurants-list";
 
 const Home = () => {
   return (
@@ -27,6 +28,21 @@ const Home = () => {
         <ProductList />
       </div>
       <Banners src="/promo_2.png" alt="A partir de R$17,90 em lanches" />
+      <div>
+        <div className="flex justify-between items-center">
+          <h2 className="font-semibold text-sm m-0">
+            Restaurantes recomendados
+          </h2>
+          <Button
+            variant="ghost"
+            className="text-primary p-0 hover:bg-transparent"
+          >
+            Ver todos
+            <ChevronRight size={16} />
+          </Button>
+        </div>
+        <RestaurantsList />
+      </div>
     </div>
   );
 };

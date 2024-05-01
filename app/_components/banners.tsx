@@ -1,11 +1,10 @@
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
-const Banners = () => {
+const Banners = (imageProps: ImageProps) => {
   return (
     <>
       <Image
-        src="/promo_1.png"
-        alt="Até 30% de desconto em pizzas"
+        {...imageProps}
         width={0}
         height={0}
         className="w-full h-auto object-contain"

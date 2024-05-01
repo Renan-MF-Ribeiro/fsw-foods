@@ -12,7 +12,7 @@ const Home = () => {
       <Header />
       <Search />
       <CategoryList />
-      <Banners />
+      <Banners src="/promo_1.png" alt="Até 30% de desconto em pizzas" />
       <div>
         <div className="flex justify-between items-center">
           <h2 className="font-semibold text-sm m-0">Pedidos recomendados</h2>
@@ -26,6 +26,7 @@ const Home = () => {
         </div>
         <ProductList />
       </div>
+      <Banners src="/promo_2.png" alt="A partir de R$17,90 em lanches" />
     </div>
   );
 };

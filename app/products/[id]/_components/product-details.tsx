@@ -52,7 +52,7 @@ const ProductDetails = ({
     });
 
   return (
-    <div className="p-5">
+    <div className="p-5 rounded-t-xl z-10 mt-[-20px] relative bg-white shadow-md shadow-black">
       <div className="flex items-center gap-[0.375rem]">
         <div className="w-6 h-6 relative">
           <Image

@@ -1,16 +1,11 @@
 "use client";
+import DeliveryInfo from "@/app/_components/deliveryInfo";
 import DiscountPercentage from "@/app/_components/discount-bagde";
 import ProductList from "@/app/_components/products-list";
 import { Button } from "@/app/_components/ui/button";
-import { Card } from "@/app/_components/ui/card";
 import { formatCurrency, calculateProductTotalPrice } from "@/app/_helps/price";
 import { Prisma } from "@prisma/client";
-import {
-  BikeIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  TimerIcon,
-} from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -97,30 +92,7 @@ const ProductDetails = ({
           </Button>
         </div>
       </div>
-      <Card className="flex justify-around items-center mt-6">
-        <div className="flex flex-col items-center">
-          <div className="flex items-center gap-1 text-muted-foreground ">
-            <BikeIcon size={14} />
-            <span className="text-xs">Entrega</span>
-          </div>
-          {Number(product.restaurant.deliveryFee) > 0 ? (
-            <p className="text-sm font-semibold">
-              {formatCurrency(Number(product.restaurant.deliveryFee))}
-            </p>
-          ) : (
-            <p className="text-sm font-semibold">Grátis</p>
-          )}
-        </div>
-        <div className="flex flex-col items-center py-3">
-          <div className="flex items-center gap-1 text-muted-foreground ">
-            <TimerIcon size={14} />
-            <span className="text-xs">Entrega</span>
-          </div>
-          <p className="text-sm font-semibold">
-            {product.restaurant.deliveryTimeMinutes} min
-          </p>
-        </div>
-      </Card>
+      <DeliveryInfo restaurant={product.restaurant} />
       <div className="mt-6 space-y-3">
         <h3 className="font-semibold">Sobre</h3>
         <p className="text-muted-foreground text-sm">{product.description}</p>
@@ -128,6 +100,9 @@ const ProductDetails = ({
       <div className="mt-6 space-y-3">
         <h3 className="font-semibold">{product.category.name}</h3>
         <ProductList products={complementaryProducts} />
+      </div>
+      <div className="mt-6 px-5">
+        <Button className="w-full font-semibold">Adicionar à sacola</Button>
       </div>
     </div>
   );

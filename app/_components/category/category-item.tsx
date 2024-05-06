@@ -8,8 +8,8 @@ interface CategoryItemProps {
 const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
     <div
-      className="flex gap-3 justify-center items-center w-auto rounded-full bg-white px-4 py-3
-        shadow-md min-w-fit"
+      className="flex gap-3 justify-center items-center w-max h-full rounded-full bg-white px-4
+        py-3 shadow-md min-w-fit"
     >
       <Image
         src={category.imageUrl}
